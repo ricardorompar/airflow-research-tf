@@ -1,0 +1,1 @@
+gcloud composer environments update research-composer-env --location us-central1 --web-server-deny-all --verbosity=debug 
