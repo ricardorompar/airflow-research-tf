@@ -16,5 +16,7 @@ The `Web server access control` configuration under the ENVIRONMENT CONFIGURATIO
 
 This makes me believe the `--web-server-deny-all` option actually is a particular case for "Allow access only from specific IP addresses" with no value specified.
 
+UPDATE: the both the API and the UI generate the same behavior as `--web-server-deny-all` in gcloud when you don't specify any IP range. For Terraform and the CLI is a different situation.
+
 3. Recreate this scenario using Terraform
 `WORK IN PROGRESS...`
