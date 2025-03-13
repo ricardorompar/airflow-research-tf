@@ -7,10 +7,10 @@ resource "google_composer_environment" "test" {
     }
 
     web_server_network_access_control {
-    #   allowed_ip_range {
-    #     description = "Deny all"
-    #     value       = var.cidr_range
-    #   }
+      allowed_ip_range {
+        description = "Deny all"
+        value       = var.cidr_range
+      }
     }
 
     environment_size = "ENVIRONMENT_SIZE_SMALL"
