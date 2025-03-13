@@ -37,7 +37,7 @@ This will effectively set the network access to `deny_all` as explained in the [
 ## Result
 The environment starts with an allowed IP range of `10.5.0.0/16` and we do a `terraform apply` with the `cidr_range` variable set to `0.0.0.0/32`. This is the result:
 
-![Result video](./images/result.mov)
+![Result video](./images/result.gif)
 
 ## Conclusion
 The API specifies that in order to deny all access we must 
