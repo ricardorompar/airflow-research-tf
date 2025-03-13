@@ -1,9 +1,9 @@
 terraform {
   cloud {
-    organization = "r2-org"
+    organization = "r2-org" #change to your HCP organization
 
     workspaces {
-      name = "lloyds-airflow-research"
+      name = "lloyds-airflow-research" #change to your HCP workspace
     }
   }
   required_providers {
@@ -20,3 +20,5 @@ provider "google" {
   zone        = var.zone
   credentials = var.gcp-creds
 }
+
+data "google_client_config" "current" {}

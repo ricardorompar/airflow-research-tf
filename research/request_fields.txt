@@ -1,0 +1,9 @@
+Method: PATCH
+URL:    https://composer.googleapis.com/v1/projects/<projectID>/locations/us-central1/environments/research-composer-env
+Query:  updateMask: config.webServerNetworkAccessControl
+Request body: 
+{
+  "config": {
+    "webServerNetworkAccessControl": {}
+  }
+}

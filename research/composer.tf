@@ -5,12 +5,14 @@ resource "google_composer_environment" "test" {
     software_config {
       image_version = "composer-3-airflow-2"
     }
-    #Web server network access control: equivalent to deny all
+
     web_server_network_access_control {
-        allowed_ip_range {
-            value = "10.0.0.0/8"
-        }
+      allowed_ip_range {
+        description = "Deny all"
+        value       = var.cidr_range
+      }
     }
+
     environment_size = "ENVIRONMENT_SIZE_SMALL"
     # This service account runs the pods of your environment and performs environment operations such as upgrading your environment to a new version.
     node_config {
@@ -18,26 +20,6 @@ resource "google_composer_environment" "test" {
     }
   }
 }
-
-# new composer:
-# resource "google_composer_environment" "new_env" {
-#   name   = "test-env"
-#   region = var.region
-#   config {
-#     software_config {
-#       image_version = "composer-3-airflow-2"
-#     }
-#     #Web server network access control: equivalent to deny all
-#     web_server_network_access_control {
-        
-#     }
-#     environment_size = "ENVIRONMENT_SIZE_SMALL"
-#     # This service account runs the pods of your environment and performs environment operations such as upgrading your environment to a new version.
-#     node_config {
-#       service_account = google_service_account.test.name
-#     }
-#   }
-# }
 
 resource "google_service_account" "test" {
   account_id   = "composer-env-account"
